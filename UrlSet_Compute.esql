@@ -1,0 +1,19 @@
+CREATE COMPUTE MODULE UrlSet_Compute
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		DECLARE Url CHARACTER;
+		SET OutputRoot = InputRoot;
+		SET Url = getPolicyProperty('{MyPolicies}:set_soap_endpoints', 'URL');
+		SET OutputLocalEnvironment.Destination.SOAP.Request.Transport.HTTP.WebServiceURL = Url;
+		RETURN TRUE;
+	END;
+	
+	
+	CREATE FUNCTION getPolicyProperty( IN policyName CHARACTER, IN propertyName CHARACTER )
+  		RETURNS CHARACTER
+  		LANGUAGE JAVA
+  		EXTERNAL NAME "UrlSet_JavaCompute.getPolicyProperty";
+  		
+  	
+END MODULE;
+

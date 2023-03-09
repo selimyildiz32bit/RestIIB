@@ -1,0 +1,46 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "title" : "BasicAuthRest",
+    "version" : "1.0.0",
+    "description" : "BasicAuthRest"
+  },
+  "paths" : {
+    "/Add" : {
+      "post" : {
+        "operationId" : "postAdd",
+        "responses" : {
+          "200" : {
+            "description" : "The operation was successful."
+          }
+        },
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "description" : "Insert a Add",
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "schema" : {
+            "$ref" : "#/definitions/CalculatorRequest"
+          },
+          "description" : "The request body for the operation",
+          "required" : true
+        } ]
+      }
+    }
+  },
+  "basePath" : "/basicauthrest/v1",
+  "definitions" : {
+    "CalculatorRequest" : {
+      "type" : "object",
+      "properties" : {
+        "sayi1" : {
+          "type" : "integer"
+        },
+        "sayi2" : {
+          "type" : "integer"
+        }
+      }
+    }
+  }
+}
