@@ -1,5 +1,5 @@
 # Starter pipeline
-- task: IBMIntegrationBusDeploy@1
+- task: IBMIntegrationBusDeploy@1 
   inputs:
     barPath: '**/*.bar'
     connType: 'address'
