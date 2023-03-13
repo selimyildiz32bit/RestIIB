@@ -21,9 +21,9 @@ steps:
 
 - task: IBMIntegrationBusDeploy@1 
   inputs:
-    barPath: '**/*.bar'
+    barPath: 'TestBar.bar'
     connType: 'address'
     integrationNodeName: 'INODE'
-    ipAddress: '127.0.0.1'
+    ipAddress: 'localhost'
     integrationServerName: 'ISERVER'
     completeDeployment: true
