@@ -1,4 +1,11 @@
 # Starter pipeline
+- task: IBMIntegrationBusCommand@1
+  inputs:
+    connType: 'address'
+    integrationNodeName: 'TESTNODE'
+    ipAddress: 'ec2-16-171-17-112.eu-north-1.compute.amazonaws.com'
+    cmd: 'mqsilist'
+    args: 'TESTNODE'
 
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
